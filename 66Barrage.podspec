@@ -20,6 +20,4 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
-  s.dependency 'YYKit', '~>1.0.7'
-
 end
