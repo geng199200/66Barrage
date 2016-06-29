@@ -5,7 +5,7 @@
 //  Created by 66 on 16/6/28.
 //  Copyright © 2016年 genju. All rights reserved.
 //
-#import <YYKit.h>
+#import "UIView+Extension.h"
 
 #import "BarrageTableViewCell.h"
 

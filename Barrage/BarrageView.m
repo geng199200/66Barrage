@@ -6,7 +6,7 @@
 //  Copyright © 2016年 genju. All rights reserved.
 //
 
-#import <YYKit.h>
+//#import <YYKit.h>
 #import "UIView+extension.h"
 
 #import "BarrageView.h"
@@ -71,10 +71,7 @@
 
 - (void)beginAnimation {
     [self setHidden:NO animation:YES];
-    __weak BarrageView *wself = self;
-    self.animationTimer = [NSTimer scheduledTimerWithTimeInterval:BarrageAnimationTime block:^(NSTimer * _Nonnull timer) {
-        [wself animationLoop];
-    } repeats:YES];
+    self.animationTimer = [NSTimer scheduledTimerWithTimeInterval:BarrageAnimationTime target:self selector:@selector(animationLoop) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop]addTimer:self.animationTimer forMode:NSRunLoopCommonModes];
 }
 
@@ -105,7 +102,9 @@
     }
     [self.tableView beginUpdates];
     [self.dataArray addObject:self.sourceArray[self.currtentRow]];
-    [self.tableView insertRow:self.currtentRow inSection:0 withRowAnimation:UITableViewRowAnimationFade];
+    NSIndexPath *toInsert = [NSIndexPath indexPathForRow:self.currtentRow inSection:0];
+    [self.tableView insertRowsAtIndexPaths:@[toInsert] withRowAnimation:UITableViewRowAnimationFade];
+
     [self.tableView endUpdates];
     if (self.tableView.contentSize.height - _tableView.height > _tableView.contentOffset.y) {
         [self.tableView setContentOffset:CGPointMake(self.tableView.contentOffset.x, self.tableView.contentOffset.y+DefaultCellHeight) animated:YES];
