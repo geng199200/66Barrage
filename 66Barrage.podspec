@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "66Barrage"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary  = "66"
   
   s.homepage     = "https://github.com/geng199200/66Barrage"
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   s.author        = { "GL" => "1247759034@qq.com" }
 
-  s.source       = { :git => "https://github.com/geng199200/66Barrage.git", :tag => "0.0.2" }
+  s.source       = { :git => "https://github.com/geng199200/66Barrage.git", :tag => "0.0.3" }
 
   s.platform     = :ios, "7.0"
 
@@ -19,5 +19,7 @@ Pod::Spec.new do |s|
   s.framework = 'UIKit'
 
   s.requires_arc = true
+
+  s.dependency 'YYKit'
 
 end
