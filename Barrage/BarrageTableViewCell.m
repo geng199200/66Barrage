@@ -6,7 +6,6 @@
 //  Copyright © 2016年 genju. All rights reserved.
 //
 #import <YYKit.h>
-#import <Masonry.h>
 
 #import "BarrageTableViewCell.h"
 
@@ -77,20 +76,7 @@
     [self.contentLabel addSubview:self.iconImageView];
 }
 
-- (void)addConstraint {
-    [self.contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView.mas_left).offset(10);
-        make.centerY.equalTo(self.contentView.mas_centerY);
-        make.width.mas_equalTo(BarrageCellContentMaxWidth);
-        make.height.mas_equalTo(43);
 
-    }];
-    [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.contentLabel.mas_centerY);
-        make.left.equalTo(self.contentLabel.mas_left).offset(0);
-        make.size.mas_equalTo(CGSizeMake(30, 30));
-    }];
-}
 
 #pragma mark - Setter Getter 
 
